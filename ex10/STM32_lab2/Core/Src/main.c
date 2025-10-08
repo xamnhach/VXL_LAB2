@@ -232,7 +232,7 @@ int main(void)
 	  matrix_buffer[7] = first_element;
   }
   setTimer0 (1000);
-  setTimer1 (100);
+  setTimer1 (60);
   setTimer2(800);
   /* USER CODE END 2 */
 
@@ -248,7 +248,7 @@ int main(void)
 		  updateLEDMatrix(index_led_matrix);
 		  index_led_matrix++;
 		  if (index_led_matrix >= MAX_LED_MATRIX) index_led_matrix = 0;
-		  setTimer1(100);
+		  setTimer1(60);
 	  }
 	  if(timer2_flag == 1){
 		  shift_left();

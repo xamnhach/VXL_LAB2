@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   000094b6  00000000  00000000  0004118a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000822de  00000000  00000000  0004a640  2**0
+ 18 .debug_str    000822c8  00000000  00000000  0004a640  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cc91e  2**0
+ 19 .comment      00000053  00000000  00000000  000cc908  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000026b0  00000000  00000000  000cc974  2**2
+ 20 .debug_frame  000026b0  00000000  00000000  000cc95c  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -603,8 +603,8 @@ int main(void)
   setTimer0 (1000);
  80004fe:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  8000502:	f7ff fe23 	bl	800014c <setTimer0>
-  setTimer1 (100);
- 8000506:	2064      	movs	r0, #100	; 0x64
+  setTimer1 (60);
+ 8000506:	203c      	movs	r0, #60	; 0x3c
  8000508:	f7ff fe3a 	bl	8000180 <setTimer1>
   setTimer2(800);
  800050c:	f44f 7048 	mov.w	r0, #800	; 0x320
@@ -648,8 +648,8 @@ int main(void)
  800054a:	db01      	blt.n	8000550 <main+0x88>
  800054c:	2300      	movs	r3, #0
  800054e:	617b      	str	r3, [r7, #20]
-		  setTimer1(100);
- 8000550:	2064      	movs	r0, #100	; 0x64
+		  setTimer1(60);
+ 8000550:	203c      	movs	r0, #60	; 0x3c
  8000552:	f7ff fe15 	bl	8000180 <setTimer1>
 	  }
 	  if(timer2_flag == 1){
